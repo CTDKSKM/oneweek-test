@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>OwnWeek Team</title>
+    <!-- 별도의 css파일을 만들어서 연결하여 사용 -->
+    <link rel="stylesheet" href="style-hanbyeol.css" />
+    <!-- 별도의 js파일을 만들어서 연결하여 사용 -->
+    <script src="js-hanbyeol.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div id="team" class="page">
+        <!-- 경모님 작성 부분 page:1 -->
+      </div>
+
+      <!-- 한별님 작성 부분 page:2 -->
+      <div id="member" class="page">
+        <div id="logoBox">
+          <img src="/image/logo.png" alt="logo" id="logoImage" />
+        </div>
+
+        <div id="memberContents">
+          <div id="selfiBox">
+            <img src="/image/hanbyeol.jpg" id="slefi" />
+          </div>
+
+          <div id="memberInfor">
+            <!-- 어떤 구조로 짜야할지 고민중.. -->
+            <table>
+              <tbody>
+                <tr>
+                  <td>이름</td>
+                  <td id="name">이한별</td>
+                </tr>
+                <tr>
+                  <td>나이</td>
+                  <td id="age">27</td>
+                </tr>
+                <tr>
+                  <td>MBTI</td>
+                  <td id="mbti">ENTJ</td>
+                </tr>
+                <tr>
+                  <td>혈액형</td>
+                  <td id="bloodType">O형</td>
+                </tr>
+                <tr>
+                  <td>거주지</td>
+                  <td id="residence">광주</td>
+                </tr>
+                <tr>
+                  <td>취미</td>
+                  <td id="hobby">ott 시청</td>
+                </tr>
+                <tr>
+                  <td>블로그</td>
+                  <td>
+                    <a
+                      href="https://velog.io/@lhb971219"
+                      target="_blank"
+                      id="blogURL"
+                    >
+                      <img
+                        src="https://nitter.net/pic/pbs.twimg.com%2Fprofile_images%2F1228368893321736193%2FOv0og7E8.jpg"
+                        alt="velog"
+                        width="20px"
+                    /></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div id="makeUpMyMind">
+              <ul>
+                <li>
+                  하고싶은 말
+                  <ul>
+                    <li>안녕하세요 :)</li>
+                    <li>잘부탁드립니다 !</li>
+                  </ul>
+                </li>
+                <li>
+                  각오
+                  <ul>
+                    <li>많은 친구 및 동료 사귀기 !</li>
+                    <li>내일배움캠프 완벽 수료 !</li>
+                    <li>멋진 프론트엔드 개발자 되기 !</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="memberBtns">
+            <ul>
+              <li class="memberOn">팀원1</li>
+              <li>팀원2</li>
+              <li>팀원3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 한별님 작성 부분 page:3 -->
+      <div id="comments" class="page">
+        <p>서로에게 하고 싶은 말을 남겨주세요</p>
+
+        <ul id="tabMember">
+          <li data-index="0" class="on">팀원1</li>
+          <li data-index="1">팀원2</li>
+          <li data-index="2">팀원3</li>
+        </ul>
+
+        <div id="tabContents-member1" class="memberContent on">
+          <p>작성자를 선택해주세요.</p>
+          <select id="selectWriter">
+            <option selected>선택안함</option>
+            <option>팀원1</option>
+            <option>팀원2</option>
+            <option>팀원3</option>
+          </select>
+
+          <div id="saveComment">
+            <input
+              type="text"
+              placeholder="하고 싶은 말을 이 곳에 작성해주세요."
+              id="comment"
+            />
+            <button onclick="saveComment()" id="saveBtn">등록하기</button>
+          </div>
+
+          <div id="commentsArea">
+            <table>
+              <thead>
+                <tr>
+                  <th>작성자</th>
+                  <th>남기는 말</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>팀원1</td>
+                  <td>
+                    8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!
+                  </td>
+                  <td><button onclick="editComment()">수정</button></td>
+                  <td><button onclick="deleteComment()">삭제</button></td>
+                </tr>
+                <tr>
+                  <td>팀원2</td>
+                  <td>One Week 화이팅ㅎㅎ!~!</td>
+                  <td><button onclick="editComment()">수정</button></td>
+                  <td><button onclick="deleteComment()">삭제</button></td>
+                </tr>
+                <tr>
+                  <td>팀원3</td>
+                  <td>
+                    8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!
+                  </td>
+                  <td><button onclick="editComment()">수정</button></td>
+                  <td><button onclick="deleteComment()">삭제</button></td>
+                </tr>
+                <tr>
+                  <td>팀원4</td>
+                  <td>
+                    8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!
+                  </td>
+                  <td><button onclick="editComment()">수정</button></td>
+                  <td><button onclick="deleteComment()">삭제</button></td>
+                </tr>
+                <tr>
+                  <td>팀원1</td>
+                  <td>
+                    8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!
+                  </td>
+                  <td><button onclick="editComment()">수정</button></td>
+                  <td><button onclick="deleteComment()">삭제</button></td>
+                </tr>
+                <tr>
+                  <td>팀원2</td>
+                  <td>
+                    8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!
+                  </td>
+                  <td><button onclick="editComment()">수정</button></td>
+                  <td><button onclick="deleteComment()">삭제</button></td>
+                </tr>
+                <tr>
+                  <td>팀원3</td>
+                  <td>
+                    8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!
+                  </td>
+                  <td><button onclick="editComment()">수정</button></td>
+                  <td><button onclick="deleteComment()">삭제</button></td>
+                </tr>
+                <tr>
+                  <td>팀원4</td>
+                  <td>
+                    8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
+                    화이팅!~!8조 화이팅!~!
+                  </td>
+                  <td><button onclick="editComment()">수정</button></td>
+                  <td><button onclick="deleteComment()">삭제</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- /commentsArea -->
+        </div>
+        <!-- /tabContents-member1 -->
+
+        <div id="tabContents-member2" class="memberContent">
+          <p>작성자를 선택해주세요.</p>
+          <select id="selectWriter">
+            <option selected>선택안함</option>
+            <option>팀원1</option>
+            <option>팀원2</option>
+            <option>팀원3</option>
+            <option>팀원4</option>
+          </select>
+
+          <div id="saveComment">
+            <input
+              type="text"
+              placeholder="하고 싶은 말을 이 곳에 작성해주세요."
+              id="comment"
+            />
+            <button onclick="saveComment()" id="saveBtn">등록하기</button>
+          </div>
+
+          <div id="commentsArea">
+            <table>
+              <thead>
+                <tr>
+                  <th>작성자</th>
+                  <th>남기는 말</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>팀원1</td>
+                  <td>팀원2에게 남기는 말입니다! 화이팅!</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- /commentsArea -->
+        </div>
+        <!-- /tabContents-member2 -->
+
+        <div id="tabContents-member3" class="memberContent">
+          <p>작성자를 선택해주세요.</p>
+          <select id="selectWriter">
+            <option selected>선택안함</option>
+            <option>팀원1</option>
+            <option>팀원2</option>
+            <option>팀원3</option>
+            <option>팀원4</option>
+          </select>
+
+          <div id="saveComment">
+            <input
+              type="text"
+              placeholder="하고 싶은 말을 이 곳에 작성해주세요."
+              id="comment"
+            />
+            <button onclick="saveComment()" id="saveBtn">등록하기</button>
+          </div>
+
+          <div id="commentsArea">
+            <table>
+              <thead>
+                <tr>
+                  <th>작성자</th>
+                  <th>남기는 말</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>팀원1</td>
+                  <td>팀원3에게 남기는 말입니다! 화이팅!</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- /commentsArea -->
+        </div>
+        <!-- /tabContents-member3 -->
+      </div>
+      <!-- /comments-->
+    </div>
+  </body>
+</html>
