@@ -55,14 +55,17 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#member1-img").click(function () {
       toView();
       show_member(0);
+      begin();
     });
     $("#member2-img").click(function () {
       toView();
       show_member(1);
+      begin();
     });
     $("#member3-img").click(function () {
       toView();
       show_member(2);
+      begin();
     });
   });
   function toView() {
@@ -79,6 +82,8 @@ function loadFn() {
   window.addEventListener("wheel", wheelFn, { passive: false });
 
   function wheelFn(e) {
+    e.preventDefault();
+
     if (protect_wheel) return;
     protect_wheel = 1;
     setTimeout(() => (protect_wheel = 0), 800);
@@ -96,3 +101,9 @@ function loadFn() {
 }
 
 //-----------------------새로고침 시 화면 메인으로 -----------//
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
+//---------------------p2 member정보 애니메이션---------------//

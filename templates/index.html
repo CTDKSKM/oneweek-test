@@ -9,9 +9,9 @@
   <title>OneWeek Team</title>
   <!-- 별도의 css파일을 만들어서 연결하여 사용 -->
   <link rel="stylesheet" href="./static/style-oneweek.css" />
+  <link rel="stylesheet" href="./static/animation.css" />
   <!-- 별도의 js파일을 만들어서 연결하여 사용 -->
   <script src="./static/js-oneweek.js"></script>
-
   <!-- 새로 작성한 부분 -hojin -->
 <script>
 
@@ -114,7 +114,7 @@
             <ul>
               <li class="memberOn" id="team1" onclick="show_member(0)">이한별</li>
               <li id="team2" onclick="show_member(1)">임호진</li>
-              <li id="team3">서경모</li>
+              <li id="team3" onclick="show_member(2)">서경모</li>
             </ul>
           </div>   
         </div>
@@ -156,20 +156,20 @@
   </div>
   <div class="members">
     <p>
-    <div class="member"><img id="member1-img" src="./static/image/img.png" alt="" width="90%" height="100%"
+    <div class="member"><img id="member1-img" src="./static/image/hanbyeol.jpg" alt="" width="50px" height="100%"
         position="center">
     </div>
-    <div class="member"><img id="member2-img" src="./static/image/img.png" alt="" width="90%" height="100%"
+    <div class="member"><img id="member2-img" src="./static/image/img.png" alt="" width="50px" height="100%"
         position="center">
     </div>
-    <div class="member"><img id="member3-img" src="./static/image/img.png" alt="" width="90%" height="100%"
+    <div class="member"><img id="member3-img" src="./static/image/seo.jpg" alt="" width="50px" height="100%"
         position="center">
     </div>
     </p>
   </div>
-  <section ip="p1">
 
-    <div id="team" class="page">
+  <section>
+    <div id="team" class="p1">
       <div class="intro-container">
         <div class="team-introbox">
           <div class="team-logo"><img
@@ -219,12 +219,9 @@
       <!-- 경모님 작성 부분 -->
     </div>
   </section>
-
-  
-
-  <section id="p2">
+  <section>
     <!-- 한별님 작성 부분 page:2 -->
-    <div id="member" class="page">
+    <div id="member"  class="p2">
       <div id="logoBox">
         <img src="./static/image/logo.png" alt="logo" id="logoImage" />
       </div>
@@ -305,9 +302,9 @@
       </div>
     </div>
   </section>
-  <section id="p3">
+  <section>
     <!-- 한별님 작성 부분 page:3 -->
-    <div id="comments" class="page">
+    <div id="comments" class="p3">
       <p>서로에게 하고 싶은 말을 남겨주세요</p>
 
       <ul id="tabMember">
@@ -421,220 +418,11 @@
         <!-- /commentsArea -->
       </div>
       <!-- /tabContents-member1 -->
-      <div id="tabContents-member2" class="memberContent">
-        <p>작성자를 선택해주세요.</p>
-        <select class="selectWriter">
-          <option selected>선택안함</option>
-          <option>팀원1</option>
-          <option>팀원2</option>
-          <option>팀원3</option>
-        </select>
-
-        <div class="saveComment">
-          <input type="text" placeholder="하고 싶은 말을 이 곳에 작성해주세요." class="comment" />
-          <button onclick="saveComment()" class="saveBtn">등록하기</button>
-        </div>
-
-        <div class="commentsArea">
-          <table>
-            <thead>
-              <tr>
-                <th>작성자</th>
-                <th>남기는 말</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>팀원1</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원2</td>
-                <td>One Week 화이팅ㅎㅎ!~!</td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원3</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원4</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원1</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원2</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원3</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원4</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- /commentsArea -->
-      </div>
-      <!-- /tabContents-member2 -->
-      <div id="tabContents-member3" class="memberContent">
-        <p>작성자를 선택해주세요.</p>
-        <select class="selectWriter">
-          <option selected>선택안함</option>
-          <option>팀원1</option>
-          <option>팀원2</option>
-          <option>팀원3</option>
-        </select>
-
-        <div class="saveComment">
-          <input type="text" placeholder="하고 싶은 말을 이 곳에 작성해주세요." class="comment" />
-          <button onclick="saveComment()" class="saveBtn">등록하기</button>
-        </div>
-
-        <div class="commentsArea">
-          <table>
-            <thead>
-              <tr>
-                <th>작성자</th>
-                <th>남기는 말</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>팀원1</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원2</td>
-                <td>One Week 화이팅ㅎㅎ!~!</td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원3</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원4</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원1</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원2</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원3</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-              <tr>
-                <td>팀원4</td>
-                <td>
-                  8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!8조 화이팅!~!8조 화이팅!~!8조
-                  화이팅!~!8조 화이팅!~!
-                </td>
-                <td><button onclick="editComment()">수정</button></td>
-                <td><button onclick="deleteComment()">삭제</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- /commentsArea -->
-      </div>
-      <!-- /tabContents-member3 -->
 
     </div>
     <!-- /comments-->
   </section>
+  
 </body>
 
 </html>
